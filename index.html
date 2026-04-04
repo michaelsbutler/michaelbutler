@@ -1,28 +1,50 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Michael Butler — Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
 </head>
-
 <body>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">Michael Butler</a>
+      <ul class="nav-links">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="work.html">WORK</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <h1>Home Page</h1>
+  <main class="feed">
+    <!-- Each .feed-item is one image + caption entry matching page 1 of your PDF -->
+    <article class="feed-item">
+      <div class="image-placeholder" style="background:#e3b7a1"></div>
+      <div class="caption">
+        <h2 class="caption-title">Design Project 1, 2025</h2>
+      </div>
+    </article>
 
-    <div class="gallery">
-        <div class="item">
-            <img src="images/photo1.jpg">
-            <p>This is my first image</p>
-        </div>
-    </div>
+    <article class="feed-item">
+      <div class="image-placeholder" style="background:#b7d9e3"></div>
+      <div class="caption">
+        <h2 class="caption-title">Design Project 2, 2024</h2>
+      </div>
+    </article>
 
+    <article class="feed-item">
+      <div class="image-placeholder" style="background:#c9e3b7"></div>
+      <div class="caption">
+        <h2 class="caption-title">Design Project 3, 2023</h2>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <a class="inquire" href="mailto:mbutler491@live.com">Inquire</a>
+  </footer>
 </body>
-
 </html>
+
