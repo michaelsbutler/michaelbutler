@@ -9,57 +9,52 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav">
-      <a class="logo" href="index.html">Michael Butler</a>
-      <ul class="nav-links">
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="work.html">WORK</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="home-link" href="index.html">HOME</a>
+      </div>
+      <div class="header-right">
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link" href="work.html">WORK</a>
+          <a class="nav-link" href="about.html">ABOUT</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
-  <header class="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <span class="home-label">HOME</span>
-    </div>
-    <div class="header-right">
-      <nav class="top-nav">
-        <span class="nav-item">WORK</span>
-        <span class="nav-item">ABOUT</span>
-      </nav>
-    </div>
-  </div>
-</header>
-
-
-  <main class="feed">
-    <!-- Each .feed-item is one image + caption entry matching page 1 of your PDF -->
+  <main class="feed" role="main">
+    <!-- Feed items: image placeholder + caption, stacked vertically like the PDF -->
     <article class="feed-item">
-      <div class="image-placeholder" style="background:#e3b7a1"></div>
+      <div class="image-placeholder" style="background:#e5007d" aria-hidden="true"></div>
       <div class="caption">
         <h2 class="caption-title">Design Project 1, 2025</h2>
+        <p class="caption-action"><a href="project.html" class="caption-link">Inquire</a></p>
       </div>
     </article>
 
     <article class="feed-item">
-      <div class="image-placeholder" style="background:#b7d9e3"></div>
+      <div class="image-placeholder" style="background:#00b0f0" aria-hidden="true"></div>
       <div class="caption">
         <h2 class="caption-title">Design Project 2, 2024</h2>
+        <p class="caption-action"><a href="project.html" class="caption-link">Inquire</a></p>
       </div>
     </article>
 
     <article class="feed-item">
-      <div class="image-placeholder" style="background:#c9e3b7"></div>
+      <div class="image-placeholder" style="background:#2fb14a" aria-hidden="true"></div>
       <div class="caption">
         <h2 class="caption-title">Design Project 3, 2023</h2>
+        <p class="caption-action"><a href="project.html" class="caption-link">Inquire</a></p>
       </div>
     </article>
   </main>
 
   <footer class="site-footer">
-    <a class="inquire" href="mailto:mbutler491@live.com">Inquire</a>
+    <div class="footer-inner">
+      <a class="inquire" href="mailto:mbutler491@live.com">Inquire</a>
+    </div>
   </footer>
 </body>
 </html>
+
 
