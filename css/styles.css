@@ -63,11 +63,6 @@ body{
   line-height:1;
 }
 
-/* hover underline only */
-.top-nav .nav-link:hover,
-.header-left .home-link:hover{
-  text-decoration:underline;
-}
 
 /* ========== MAIN FEED (home) ========== */
 /* container */
@@ -126,17 +121,10 @@ body{
   color:var(--text);
   text-decoration:none;
 }
-.caption-link:hover,
-.inquire:hover{
-  text-decoration:underline;
-}
 
 
 
-.caption-link:hover,
-.inquire:hover{
-  text-decoration:underline;
-}
+
 
 /* ========== WORK / PROJECT / ABOUT ========== */
 .container{
