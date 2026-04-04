@@ -39,79 +39,33 @@ body{
   gap:12px;
 }
 
-/* HOME (left) */
+/* HEADER: lighter, slightly smaller Avenir headings */
 .header-left .home-link{
   font-family:var(--heading-font);
-  font-weight:700;
-  font-size:25px; /* Avenir Next Demi ~25pt */
+  font-weight:600;      /* lighter than 700 */
+  font-size:20px;       /* reduced size */
   color:var(--text);
-  text-decoration:none; /* clickable, but not look like a link */
+  text-decoration:none;
   display:inline-block;
   line-height:1;
 }
-
-/* WORK / ABOUT (right) */
-.header-right .top-nav{
-  display:flex;
-  gap:32px;
-  align-items:center;
-}
 .top-nav .nav-link{
   font-family:var(--heading-font);
-  font-weight:700;
-  font-size:25px;
+  font-weight:600;      /* lighter */
+  font-size:20px;       /* reduced size */
   color:var(--text);
-  text-decoration:none; /* remove default link styling */
+  text-decoration:none;
   line-height:1;
 }
 
-/* subtle hover (still not blue) */
-.top-nav .nav-link:hover,
-.header-left .home-link:hover{
-  text-decoration:underline;
-  color:var(--text);
-}
-
-/* Ensure nav stays visually top-right on small widths */
-.header-inner { align-items:flex-start; }
-@media (max-width:520px){
-  .header-left .home-link,
-  .top-nav .nav-link { font-size:18px; }
-  .header-inner { align-items:center; }
-}
-
-/* ========== MAIN FEED (HOME) ========== */
-.feed{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:56px 24px;
-  display:block;
-}
-.feed-item{
-  margin-bottom:88px;
-  display:block;
-  text-align:center; /* centers image + caption */
-}
-.image-placeholder{
-  width:520px;
-  height:520px;
-  margin:0 auto;
-  border-radius:2px;
-  display:block;
-  background-size:cover;
-  background-position:center;
-}
-.caption{
-  margin-top:28px;
-  text-align:center;
-}
+/* FEED CAPTION: Palatino regular, smaller and same style as inquire text */
 .caption-title{
-  font-family:var(--heading-font);
-  font-size:25px;
-  font-weight:600;
+  font-family:var(--body-font); /* Palatino */
+  font-size:18px;               /* smaller than heading */
+  font-weight:400;              /* regular */
+  font-style:italic;            /* keep the italic feel from PDF */
   color:var(--text);
   margin:0;
-  font-style:normal;
 }
 
 /* Inquire link: clickable but styled as body text (no blue underline) */
@@ -120,12 +74,12 @@ body{
 .inquire{
   font-family:var(--body-font);
   color:var(--text);
-  text-decoration:none; /* not underlined by default */
+  text-decoration:none;
   font-size:18px;
 }
 .caption-link:hover,
 .inquire:hover{
-  text-decoration:underline; /* subtle hover cue, still not blue */
+  text-decoration:underline;
 }
 
 /* ========== WORK / PROJECT / ABOUT (shared base) ========== */
