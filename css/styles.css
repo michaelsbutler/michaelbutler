@@ -110,7 +110,7 @@ body{
   font-family:var(--body-font); /* Palatino */
   font-size:18px;
   font-weight:400;
-  font-style:italic; /* project name + year both italic */
+  font-style:normal; /* project name + year both italic */
   color:var(--text);
   margin:0;
 }
