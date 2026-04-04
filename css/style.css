@@ -2,12 +2,13 @@
   --bg:#f6f1ec;
   --heading-font: "Avenir Next", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --body-font: "Palatino", "Palatino Linotype", "Georgia", serif;
-  --max-width: 1100px;
-  --gutter: 28px;
-  --muted:#6b6b6b;
+  --max-width:1100px;
+  --gutter:28px;
   --text:#111;
+  --muted:#6b6b6b;
 }
 
+/* Reset / base */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{
@@ -20,81 +21,171 @@ body{
   font-size:18px;
 }
 
-/* HEADER: single clean top bar */
+/* ========== HEADER ========== */
+/* container */
 .site-header{
   padding:18px calc((100% - var(--max-width))/2 + var(--gutter));
+  background:transparent;
+  position:relative;
+  z-index:20;
 }
+/* inner row: HOME left, nav right */
 .header-inner{
   max-width:var(--max-width);
   margin:0 auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:12px;
 }
+
+/* HOME (left) */
 .header-left .home-link{
   font-family:var(--heading-font);
   font-weight:700;
-  font-size:25px; /* Avenir Next Demi 25pt */
+  font-size:25px; /* Avenir Next Demi ~25pt */
   color:var(--text);
-  text-decoration:none;
+  text-decoration:none; /* clickable, but not look like a link */
+  display:inline-block;
+  line-height:1;
 }
-.header-right .top-nav{display:flex;gap:32px;align-items:center}
+
+/* WORK / ABOUT (right) */
+.header-right .top-nav{
+  display:flex;
+  gap:32px;
+  align-items:center;
+}
 .top-nav .nav-link{
   font-family:var(--heading-font);
   font-weight:700;
-  font-size:25px; /* Avenir Next Demi 25pt */
+  font-size:25px;
   color:var(--text);
-  text-decoration:none;
-  letter-spacing:0;
+  text-decoration:none; /* remove default link styling */
+  line-height:1;
 }
-.top-nav .nav-link:focus,.top-nav .nav-link:hover,
-.header-left .home-link:focus,.header-left .home-link:hover{
+
+/* subtle hover (still not blue) */
+.top-nav .nav-link:hover,
+.header-left .home-link:hover{
   text-decoration:underline;
-  outline:none;
+  color:var(--text);
 }
 
-/* MAIN FEED (home) */
-.feed{max-width:var(--max-width);margin:0 auto;padding:36px 24px}
-.feed-item{margin-bottom:96px;display:block;align-items:center}
-.image-placeholder{width:520px;height:520px;margin:0 auto;border-radius:2px;box-shadow:0 0 0 0 rgba(0,0,0,0)}
-.caption{margin-top:28px;text-align:center}
-.caption-title{font-family:var(--heading-font);font-size:25px;font-weight:600;color:var(--text);font-style:normal}
-.caption-action{margin-top:12px}
-.caption-link{font-family:var(--body-font);font-size:18px;color:var(--text);text-decoration:underline}
+/* Ensure nav stays visually top-right on small widths */
+.header-inner { align-items:flex-start; }
+@media (max-width:520px){
+  .header-left .home-link,
+  .top-nav .nav-link { font-size:18px; }
+  .header-inner { align-items:center; }
+}
 
-/* WORK list */
+/* ========== MAIN FEED (HOME) ========== */
+.feed{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:56px 24px;
+  display:block;
+}
+.feed-item{
+  margin-bottom:88px;
+  display:block;
+  text-align:center; /* centers image + caption */
+}
+.image-placeholder{
+  width:520px;
+  height:520px;
+  margin:0 auto;
+  border-radius:2px;
+  display:block;
+  background-size:cover;
+  background-position:center;
+}
+.caption{
+  margin-top:28px;
+  text-align:center;
+}
+.caption-title{
+  font-family:var(--heading-font);
+  font-size:25px;
+  font-weight:600;
+  color:var(--text);
+  margin:0;
+  font-style:normal;
+}
+
+/* Inquire link: clickable but styled as body text (no blue underline) */
+.caption-action{margin-top:12px}
+.caption-link,
+.inquire{
+  font-family:var(--body-font);
+  color:var(--text);
+  text-decoration:none; /* not underlined by default */
+  font-size:18px;
+}
+.caption-link:hover,
+.inquire:hover{
+  text-decoration:underline; /* subtle hover cue, still not blue */
+}
+
+/* ========== WORK / PROJECT / ABOUT (shared base) ========== */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:36px 24px;
+}
+
+/* Work list (table) */
 .work-list{max-width:var(--max-width);margin:0 auto;padding:36px 24px}
 .work-heading{font-family:var(--heading-font);font-size:25px;margin-bottom:24px}
 .projects-table{width:100%;border-collapse:collapse}
-.projects-table thead th{font-family:var(--heading-font);font-size:18px;text-align:left;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.2)}
-.projects-table tbody td{padding:24px 0;font-family:var(--body-font);font-size:20px;color:var(--text)}
-.project-link{font-family:var(--body-font);font-style:italic;text-decoration:none;color:var(--text)}
-.col-scope,.col-date{font-family:var(--body-font);font-size:18px;color:var(--muted);}
+.projects-table thead th{
+  font-family:var(--heading-font);
+  font-size:18px;
+  text-align:left;
+  padding:12px 0;
+  border-bottom:1px solid rgba(0,0,0,0.12);
+}
+.projects-table tbody td{
+  padding:22px 0;
+  font-family:var(--body-font);
+  font-size:20px;
+  color:var(--text);
+}
+.project-link{
+  font-family:var(--body-font);
+  font-style:italic;
+  text-decoration:none;
+  color:var(--text);
+}
+.col-scope,.col-date{
+  font-family:var(--body-font);
+  font-size:18px;
+  color:var(--muted);
+}
 
-/* PROJECT detail */
+/* Project detail */
 .project{max-width:var(--max-width);margin:0 auto;padding:36px 24px}
 .project-title{font-family:var(--heading-font);font-size:25px;margin-bottom:20px}
 .project-body{display:grid;grid-template-columns:420px 1fr;gap:60px;align-items:start}
 .project-image{width:100%;height:420px;border-radius:2px}
 .project-copy .lead{font-family:var(--body-font);font-size:18px;color:var(--text);line-height:1.6}
 
-/* ABOUT */
+/* About */
 .about{max-width:var(--max-width);margin:0 auto;padding:36px 24px}
 .about-top{display:grid;grid-template-columns:380px 1fr;gap:60px;align-items:start;margin-bottom:48px}
 .about-image{width:100%;height:380px;border-radius:2px}
 .about-name{font-family:var(--heading-font);font-size:32px;margin-bottom:12px}
 .bio{font-family:var(--body-font);font-size:20px;color:var(--text)}
-
-/* CONTACT */
 .contact{margin-top:8px}
 .contact h2{font-family:var(--heading-font);font-size:18px;margin-bottom:8px}
 .contact-email{font-family:var(--body-font);color:var(--text);text-decoration:underline}
 
-/* FOOTER */
+/* Footer */
 .site-footer{max-width:var(--max-width);margin:0 auto;padding:16px 24px;display:flex;justify-content:flex-end}
 .inquire{font-family:var(--heading-font);text-decoration:none;color:var(--text);font-weight:600}
 
-/* Responsive */
+/* ========== RESPONSIVE ========== */
 @media (max-width:1100px){
   .project-body{grid-template-columns:360px 1fr;gap:40px}
   .about-top{grid-template-columns:320px 1fr;gap:40px}
