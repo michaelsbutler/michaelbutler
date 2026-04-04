@@ -105,27 +105,28 @@ body{
   margin-right:auto;
 }
 
-/* Project title: Palatino regular, slightly smaller */
+/* Project title: Palatino regular, no italics */
 .caption-title{
   font-family:var(--body-font); /* Palatino */
-  font-size:18px;               /* matches inquire size */
+  font-size:18px;
   font-weight:400;
-  font-style:italic;
+  font-style:normal; /* no italics for title or year */
   color:var(--text);
   margin:0;
 }
 
-/* Inquire matches the project title styling exactly */
+/* Inquire matches the project title exactly */
 .caption-action{margin-top:12px}
 .caption-link,
 .inquire{
   font-family:var(--body-font);
   font-size:18px;
+  font-weight:400;
+  font-style:normal; /* match title exactly */
   color:var(--text);
   text-decoration:none;
-  font-weight:400;
-  font-style:normal; /* if you prefer italic, change to italic */
 }
+
 .caption-link:hover,
 .inquire:hover{
   text-decoration:underline;
