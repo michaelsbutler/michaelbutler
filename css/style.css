@@ -1,0 +1,74 @@
+:root {
+  --bg: #f6f1ec;
+  --heading-font: "Avenir Next", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --body-font: "Palatino", "Palatino Linotype", "Georgia", serif;
+  --max-width: 1000px;
+  --gutter: 24px;
+  --muted: #6b6b6b;
+}
+
+* {box-sizing: border-box; margin:0; padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg);
+  font-family: var(--body-font);
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+.site-header{
+  padding:18px calc((100% - var(--max-width))/2 + var(--gutter));
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-family:var(--heading-font);font-weight:600;font-size:20px;color:#111;text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:18px}
+.nav-links a{font-family:var(--heading-font);font-weight:600;font-size:16px;text-decoration:none;color:#111;letter-spacing:0.04em}
+
+/* Feed (home) */
+.feed{max-width:var(--max-width);margin:0 auto;padding:16px}
+.feed-item{margin-bottom:32px;display:block}
+.image-placeholder{width:100%;height:520px;border-radius:4px}
+.caption{margin-top:12px}
+.caption-title{font-family:var(--heading-font);font-size:25px}
+
+/* Work list */
+.work-list{max-width:var(--max-width);margin:0 auto;padding:16px}
+.work-heading{font-family:var(--heading-font);font-size:25px;margin-bottom:18px}
+.projects{list-style:none;display:flex;flex-direction:column;gap:18px}
+.project-item{background:transparent}
+.project-item a{display:block;text-decoration:none;color:inherit;padding:12px;border-radius:4px}
+.project-meta h2{font-family:var(--heading-font);font-size:22px}
+.scope, .date{color:var(--muted);font-size:16px;margin-top:6px}
+
+/* Project detail */
+.project{max-width:var(--max-width);margin:0 auto;padding:16px}
+.project-title{font-family:var(--heading-font);font-size:25px;margin-bottom:14px}
+.project-body{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.project-image{width:100%;height:360px;border-radius:4px}
+.project-copy p{font-size:18px}
+
+/* About */
+.about{max-width:var(--max-width);margin:0 auto;padding:16px}
+.about-name{font-family:var(--heading-font);font-size:25px;margin-bottom:12px}
+.bio{font-size:18px;margin-bottom:12px}
+.contact a{display:inline-block;color:inherit;text-decoration:underline;margin-top:8px}
+
+/* Footer / Inquire */
+.site-footer{max-width:var(--max-width);margin:0 auto;padding:16px;display:flex;justify-content:flex-end}
+.inquire{font-family:var(--heading-font);text-decoration:none;color:#111;font-weight:600}
+
+/* Responsive */
+@media (max-width:900px){
+  .image-placeholder{height:420px}
+  .project-body{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .image-placeholder{height:320px}
+  .logo{font-size:18px}
+  .nav-links{gap:12px}
+  .caption-title,.work-heading,.about-name,.project-title{font-size:20px}
+  .project-image{height:220px}
+  body{padding-bottom:40px}
+}
