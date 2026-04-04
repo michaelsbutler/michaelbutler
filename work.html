@@ -1,26 +1,50 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <title>My Work</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Michael Butler — Work</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
 </head>
-
 <body>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">HOME</a>
+      <ul class="nav-links">
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <h1>My Projects</h1>
+  <main class="work-list">
+    <h1 class="work-heading">WORK</h1>
+    <ul class="projects">
+      <li class="project-item">
+        <a href="project.html">
+          <div class="project-meta">
+            <h2>Design Project 1</h2>
+            <p class="scope">Design</p>
+            <p class="date">October 12, 2025</p>
+          </div>
+        </a>
+      </li>
 
-    <ul>
-        <li>Project One</li>
-        <li>Project Two</li>
+      <li class="project-item">
+        <a href="project.html">
+          <div class="project-meta">
+            <h2>Design Project 2</h2>
+            <p class="scope">Branding</p>
+            <p class="date">June 2, 2024</p>
+          </div>
+        </a>
+      </li>
     </ul>
+  </main>
 
+  <footer class="site-footer">
+    <a href="index.html" class="back-work">HOME</a>
+  </footer>
 </body>
-
 </html>
+
