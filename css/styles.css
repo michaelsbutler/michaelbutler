@@ -105,27 +105,11 @@ body{
   margin-right:auto;
 }
 
-/* Project title: Palatino regular, no italics */
+/* Project title container */
 .caption-title{
   font-family:var(--body-font); /* Palatino */
-  font-size:18px;
-  font-weight:400;
-  font-style:normal; /* no italics for title or year */
-  color:var(--text);
-  margin:0;
-}
+  font-size:18
 
-/* Inquire matches the project title exactly */
-.caption-action{margin-top:12px}
-.caption-link,
-.inquire{
-  font-family:var(--body-font);
-  font-size:18px;
-  font-weight:400;
-  font-style:normal; /* match title exactly */
-  color:var(--text);
-  text-decoration:none;
-}
 
 .caption-link:hover,
 .inquire:hover{
