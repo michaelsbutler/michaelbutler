@@ -9,57 +9,47 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav">
-      <a class="logo" href="index.html">HOME</a>
-      <ul class="nav-links">
-        <li><a href="about.html">ABOUT</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <div class="header-left">
+        <a class="home-link" href="index.html">HOME</a>
+      </div>
+      <div class="header-right">
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link" href="work.html">WORK</a>
+          <a class="nav-link" href="about.html">ABOUT</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
-  <header class="site-header">
-  <div class="header-inner">
-    <div class="header-left">
-      <span class="home-label">HOME</span>
-    </div>
-    <div class="header-right">
-      <nav class="top-nav">
-        <span class="nav-item">WORK</span>
-        <span class="nav-item">ABOUT</span>
-      </nav>
-    </div>
-  </div>
-</header>
-
-
-  <main class="work-list">
+  <main class="work-list" role="main">
     <h1 class="work-heading">WORK</h1>
-    <ul class="projects">
-      <li class="project-item">
-        <a href="project.html">
-          <div class="project-meta">
-            <h2>Design Project 1</h2>
-            <p class="scope">Design</p>
-            <p class="date">October 12, 2025</p>
-          </div>
-        </a>
-      </li>
 
-      <li class="project-item">
-        <a href="project.html">
-          <div class="project-meta">
-            <h2>Design Project 2</h2>
-            <p class="scope">Branding</p>
-            <p class="date">June 2, 2024</p>
-          </div>
-        </a>
-      </li>
-    </ul>
+    <table class="projects-table" summary="List of projects">
+      <thead>
+        <tr>
+          <th class="col-title">Title</th>
+          <th class="col-scope">Scope</th>
+          <th class="col-date">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="project-row">
+          <td class="col-title"><a class="project-link" href="project.html">Design Project 1</a></td>
+          <td class="col-scope">Design</td>
+          <td class="col-date">October 12, 2025</td>
+        </tr>
+        <tr class="project-row">
+          <td class="col-title"><a class="project-link" href="project.html">Design Project 2</a></td>
+          <td class="col-scope">Branding</td>
+          <td class="col-date">June 2, 2024</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 
-  <footer class="site-footer">
-    <a href="index.html" class="back-work">HOME</a>
-  </footer>
+  <footer class="site-footer"></footer>
 </body>
 </html>
+
 
