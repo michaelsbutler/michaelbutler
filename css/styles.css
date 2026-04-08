@@ -150,9 +150,10 @@ body{
 .projects-table tbody td{
   padding:22px 0;
   font-family:var(--body-font);
-  font-size:20px;
+  font-size:16px; /* match headers */
   color:var(--text);
 }
+
 .project-link{
   font-family:var(--body-font);
   font-style:italic;
