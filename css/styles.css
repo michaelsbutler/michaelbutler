@@ -103,7 +103,7 @@ body{
 /* Project title: Palatino italic */
 .caption-title{
   font-family:var(--body-font); /* Palatino */
-  font-size:18px;
+  font-size:16px;
   font-weight:400;
   font-style:normal; /* project name + year both italic */
   color:var(--text);
