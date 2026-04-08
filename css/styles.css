@@ -115,7 +115,7 @@ body{
 .caption-link,
 .inquire{
   font-family:var(--body-font);
-  font-size:18px;
+  font-size:16px;
   font-weight:400;
   font-style:italic; /* match title */
   color:var(--text);
