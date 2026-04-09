@@ -1,0 +1,14 @@
+{
+  "homePageLayout": [
+    {
+      "type": "horizontal-full",
+      "projects": [
+        {
+          "title": "Civil War",
+          "year": 2023,
+          "imageUrl": "content/images/homepage-hero.jpg"
+        }
+      ]
+    }
+  ]
+}
