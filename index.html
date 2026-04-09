@@ -27,42 +27,47 @@
   </main>
 
   <footer class="site-footer"></footer>
-   <script>
-  fetch('content/home-projects.json')
-    .then(response => response.json())
-    .then(data => {
-  const articleHTML = `
-  <article class="feed-item horizontal-full">
-    
-    <div class="image-placeholder" style="background-image: url('${project.imageUrl}')" aria-hidden="true"></div>
-    
-    <div class="caption">
-      <h2 class="caption-title"><em>${project.title}</em>, ${project.year}. Linocut.</h2>
-    </div>
+ <script>
+fetch('content/home-projects.json')
+  .then(response => response.json())
+  .then(data => {
+    const feedElement = document.querySelector('.feed');
 
-    <div class="pdf-row">
-      <div class="pdf-item">
-        <img src="content/images/AudeEleanorCoverCov.jpg" class="pdf-image vertical">
-        <div class="caption">
-          <h2 class="caption-title"><em>Vertical Work</em></h2>
-        </div>
-      </div>
+    data.homePageLayout.forEach(section => {
+      section.projects.forEach(project => {
 
-      <div class="pdf-item">
-        <img src="content/images/AudeEleanorBookletInt.jpg" class="pdf-image horizontal">
-        <div class="caption">
-          <h2 class="caption-title"><em>Wide Work</em></h2>
-        </div>
-      </div>
-    </div>
+        // Build the article
+        const articleHTML = `
+          <article class="feed-item horizontal-full">
 
-  </article>
-`;
-          feedElement.innerHTML += articleHTML;
-        });
+            <div class="image-placeholder" style="background-image: url('${project.imageUrl}')" aria-hidden="true"></div>
+
+            <div class="caption">
+              <h2 class="caption-title"><em>${project.title}</em>, ${project.year}. Linocut.</h2>
+            </div>
+
+            <div class="pdf-row">
+              <div class="pdf-item">
+                <img src="content/images/AudeEleanorCoverCov.jpg" class="pdf-image vertical">
+                <div class="caption">
+                  <h2 class="caption-title"><em>Vertical Work</em></h2>
+                </div>
+              </div>
+
+              <div class="pdf-item">
+                <img src="content/images/AudeEleanorBookletInt.jpg" class="pdf-image horizontal">
+                <div class="caption">
+                  <h2 class="caption-title"><em>Wide Work</em></h2>
+                </div>
+              </div>
+            </div>
+
+          </article>
+        `;
+
+        feedElement.innerHTML += articleHTML;
+
       });
     });
+  });
 </script>
-
-</body>
-</html>
