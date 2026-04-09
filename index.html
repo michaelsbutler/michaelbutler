@@ -31,7 +31,7 @@
   fetch('content/home-projects.json')
     .then(response => response.json())
     .then(data => {
-    const articleHTML = `
+  const articleHTML = `
   <article class="feed-item horizontal-full">
     
     <div class="image-placeholder" style="background-image: url('${project.imageUrl}')" aria-hidden="true"></div>
@@ -42,16 +42,16 @@
 
     <div class="pdf-row">
       <div class="pdf-item">
-        <embed src="content/pdfs/pdf1.pdf" type="application/pdf" class="pdf-embed vertical">
+        <img src="content/images/musical-chairs-vertical.jpg" class="pdf-image vertical">
         <div class="caption">
-          <h2 class="caption-title"><em>PDF Title 1</em></h2>
+          <h2 class="caption-title"><em>Vertical Work</em></h2>
         </div>
       </div>
 
       <div class="pdf-item">
-        <embed src="content/pdfs/pdf2.pdf" type="application/pdf" class="pdf-embed horizontal">
+        <img src="content/images/musical-chairs-wide.jpg" class="pdf-image horizontal">
         <div class="caption">
-          <h2 class="caption-title"><em>PDF Title 2</em></h2>
+          <h2 class="caption-title"><em>Wide Work</em></h2>
         </div>
       </div>
     </div>
