@@ -252,11 +252,11 @@ body{
 }
 /* Main homepage image */
 .feed-item.horizontal-full .image-placeholder {
-  width: 90%;           /* slightly smaller than full width */
-  max-width: 900px;     /* prevents it from being enormous */
-  height: auto;         /* automatic height based on width */
-  margin: 0 auto;       /* center */
-  background-size: contain;  /* show full image without cropping */
+  width: 90%;
+  max-width: 900px;
+  height: 520px;           /* FIX: set a visible height */
+  margin: 0 auto;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
