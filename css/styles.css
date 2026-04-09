@@ -264,4 +264,42 @@ body{
 .feed-item.horizontal-full {
   margin-bottom: 0; /* Remove bottom margin for full-width image */
 }
+/* PDF row layout */
+.pdf-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  align-items: flex-start;
+}
 
+/* each PDF block */
+.pdf-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* PDF styling */
+.pdf-embed {
+  border: none;
+  background: #f5f5f5;
+}
+
+/* vertical PDF */
+.pdf-embed.vertical {
+  width: 300px;
+  height: 420px;
+}
+
+/* horizontal PDF */
+.pdf-embed.horizontal {
+  width: 600px;
+  height: 420px;
+}
+
+/* captions under PDFs */
+.pdf-item .caption {
+  width: auto;
+  margin-top: 12px;
+}
