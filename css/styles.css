@@ -250,54 +250,54 @@ body{
   .projects-table tbody td{font-size:18px;padding:18px 0}
   .project-body{gap:20px}
 }
-/* ===== Main homepage image ===== */
+/* Main homepage image */
 .feed-item.horizontal-full .image-placeholder {
-  width: 100%;
-  max-width: 900px;   /* shrink slightly from full width */
-  height: auto;
-  aspect-ratio: 1 / 1; /* keeps square-ish shape, adjust as needed */
-  background-size: cover;
+  width: 90%;           /* slightly smaller than full width */
+  max-width: 900px;     /* prevents it from being enormous */
+  height: auto;         /* automatic height based on width */
+  margin: 0 auto;       /* center */
+  background-size: contain;  /* show full image without cropping */
+  background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto;
 }
 
-/* ===== PDF IMAGE ROW ===== */
+/* PDF images container */
 .pdf-row {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap; /* stack on narrow screens */
+  gap: 40px;          /* space between images */
   margin-top: 40px;
+  flex-wrap: wrap;     /* allows stacking on small screens */
 }
 
+/* Individual PDF item */
 .pdf-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1 1 300px; /* min width 300px, grows as needed */
-  max-width: 600px; /* prevents them from growing too large */
+  flex: 0 1 45%;       /* roughly half the container width */
+  max-width: 500px;    /* prevents images from getting too large */
 }
 
+/* PDF images */
 .pdf-image {
-  display: block;
   width: 100%;
-  height: auto;
-  max-width: 100%; /* ensures they never stretch beyond container */
+  height: auto;        /* maintain original proportions */
 }
 
-/* Optional: differentiate vertical/horizontal proportions if you like */
-.pdf-image.vertical {
-  aspect-ratio: 2 / 3; /* vertical format */
-  object-fit: cover;
-}
-
-.pdf-image.horizontal {
-  aspect-ratio: 3 / 2; /* horizontal format */
-  object-fit: cover;
-}
-
-/* captions under images */
+/* Captions */
 .pdf-item .caption {
   margin-top: 12px;
   text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pdf-item {
+    flex: 0 1 100%;    /* stack vertically on tablets and smaller */
+  }
+
+  .feed-item.horizontal-full .image-placeholder {
+    width: 100%;
+  }
 }
