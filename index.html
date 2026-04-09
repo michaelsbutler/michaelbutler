@@ -31,16 +31,34 @@ const feed = document.querySelector('.feed');
 fetch('content/home-projects.json')
   .then(res => res.json())
   .then(data => {
-    data.homePageLayout[0].projects.forEach(project => {
-      feed.innerHTML += `
-        <article class="feed-item horizontal-full">
-          <div class="image-placeholder" style="background-image: url('${project.imageUrl}')"></div>
-          <div class="caption">
-            <h2 class="caption-title"><em>${project.title}</em>, ${project.year}. ${project.medium}.</h2>
-          </div>
-        </article>
-      `;
-    });
+    const projects = data.homePageLayout[0].projects;
+
+    // PROJECT 1 (full width)
+    const project1 = projects[0];
+    feed.innerHTML += `
+      <article class="feed-item horizontal-full">
+        <div class="image-placeholder" style="background-image: url('${project1.imageUrl}')"></div>
+        <div class="caption">
+          <h2 class="caption-title"><em>${project1.title}</em>, ${project1.year}. ${project1.medium}.</h2>
+        </div>
+      </article>
+    `;
+
+    // PROJECTS 2 & 3 (side by side)
+    feed.innerHTML += `
+      <article class="feed-item horizontal-pair">
+        <div class="side-by-side">
+          ${projects.slice(1).map(p => `
+            <div class="half-project">
+              <div class="image-placeholder" style="background-image: url('${p.imageUrl}')"></div>
+              <div class="caption">
+                <h2 class="caption-title"><em>${p.title}</em>, ${p.year}. ${p.medium}.</h2>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </article>
+    `;
   })
   .catch(err => console.error('Error loading JSON:', err));
 </script>
