@@ -26,28 +26,21 @@
 </main>
 
 <script>
+const feed = document.querySelector('.feed');
+
 fetch('content/home-projects.json')
   .then(res => res.json())
   .then(data => {
-    const feed = document.querySelector('.feed');
-
     data.homePageLayout[0].projects.forEach(project => {
-      const article = document.createElement('article');
-      article.className = 'feed-item horizontal-full';
-
-      const imgDiv = document.createElement('div');
-      imgDiv.className = 'image-placeholder';
-      imgDiv.style.backgroundImage = `url('${project.imageUrl}')`;
-      imgDiv.setAttribute('aria-hidden', 'true');
-
-      const caption = document.createElement('div');
-      caption.className = 'caption';
-      caption.innerHTML = `<h2 class="caption-title"><em>${project.title}</em>, ${project.year}. ${project.medium}.</h2>`;
-
-      article.appendChild(imgDiv);
-      article.appendChild(caption);
-      feed.appendChild(article);
+      feed.innerHTML += `
+        <article class="feed-item horizontal-full">
+          <div class="image-placeholder" style="background-image: url('${project.imageUrl}')"></div>
+          <div class="caption">
+            <h2 class="caption-title"><em>${project.title}</em>, ${project.year}. ${project.medium}.</h2>
+          </div>
+        </article>
+      `;
     });
   })
-  .catch(err => console.error(err));
+  .catch(err => console.error('Error loading JSON:', err));
 </script>
