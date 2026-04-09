@@ -250,54 +250,54 @@ body{
   .projects-table tbody td{font-size:18px;padding:18px 0}
   .project-body{gap:20px}
 }
-/* Full-width homepage image styles */
+/* ===== Main homepage image ===== */
 .feed-item.horizontal-full .image-placeholder {
-  width: 80%;              /* makes it smaller */
-  max-width: 900px;        /* prevents it from getting huge */
-  height: 60vh;
-  margin: 0 auto;          /* centers it */
-  background-size: contain; /* shows full image */
-  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 900px;   /* shrink slightly from full width */
+  height: auto;
+  aspect-ratio: 1 / 1; /* keeps square-ish shape, adjust as needed */
+  background-size: cover;
   background-position: center;
+  margin: 0 auto;
 }
 
-.feed-item.horizontal-full {
-  margin-bottom: 0; /* Remove bottom margin for full-width image */
-}
 /* ===== PDF IMAGE ROW ===== */
-
 .pdf-row {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 60px;
-  align-items: flex-start;
+  flex-wrap: wrap; /* stack on narrow screens */
+  margin-top: 40px;
 }
 
 .pdf-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1 1 300px; /* min width 300px, grows as needed */
+  max-width: 600px; /* prevents them from growing too large */
 }
 
 .pdf-image {
   display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%; /* ensures they never stretch beyond container */
 }
 
-/* vertical image */
+/* Optional: differentiate vertical/horizontal proportions if you like */
 .pdf-image.vertical {
-  width: 300px;
-  height: auto;
+  aspect-ratio: 2 / 3; /* vertical format */
+  object-fit: cover;
 }
 
-/* horizontal image */
 .pdf-image.horizontal {
-  width: 600px;
-  height: auto;
+  aspect-ratio: 3 / 2; /* horizontal format */
+  object-fit: cover;
 }
 
 /* captions under images */
 .pdf-item .caption {
   margin-top: 12px;
-  width: auto;
+  text-align: center;
 }
