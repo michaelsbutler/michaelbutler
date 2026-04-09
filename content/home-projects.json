@@ -8,23 +8,20 @@
           "year": 2026,
           "medium": "Linocut",
           "imageUrl": "content/images/IMG_6196.jpg"
-        }
-      ]
-    },
-    {
-      "type": "side-by-side",
-      "projects": [
+        },
         {
           "title": "Aude Eleanor (Vertical)",
           "year": 2025,
           "medium": "Print",
-          "imageUrl": "content/images/AudeEleanorCoverCov.jpg"
+          "imageUrl": "content/images/AudeEleanorCoverCov.jpg",
+          "sideBySide": true
         },
         {
           "title": "Aude Eleanor (Spread)",
           "year": 2025,
           "medium": "Print",
-          "imageUrl": "content/images/AudeEleanorBookletInt.jpg"
+          "imageUrl": "content/images/AudeEleanorBookletInt.jpg",
+          "sideBySide": true
         }
       ]
     }
