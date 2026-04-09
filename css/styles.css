@@ -171,14 +171,22 @@ body{
 
 /* Project detail */
 .project{max-width:var(--max-width);margin:0 auto;padding:36px 24px}
+.project-image-wrapper{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end; /* right-align title with image */
+}
 .project-title{
   font-family:var(--body-font); /* Palatino */
   font-size:16px;
   font-weight:400;
   font-style:normal;
-  margin-bottom:40px; /* more breathing room below title */
+  margin-top:8px; /* minimal spacing below image */
+  margin-bottom:0;
   color:var(--text);
+  text-align:right;
 }
+
 
 .project-body{display:grid;grid-template-columns:420px 1fr;gap:60px;align-items:start}
 .project-image{width:100%;height:420px;border-radius:2px}
