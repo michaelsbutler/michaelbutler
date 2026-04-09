@@ -163,9 +163,10 @@ body{
 .col-scope,.col-date{
   font-family:var(--body-font);
   font-size:16px; /* match header */
-  color:var(--muted);
+  color:var(--text); /* match darkness of other text */
   padding-right:12px; /* reduce right padding for tighter spacing */
 }
+
 
 
 /* Project detail */
