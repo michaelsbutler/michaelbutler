@@ -301,7 +301,6 @@ body{
     width: 100%;
   }
 }
-/* container for two projects */
 /* ===== Projects 2 & 3 side by side ===== */
 .side-by-side {
   display: flex;
@@ -317,10 +316,11 @@ body{
 }
 
 .half-project .image-placeholder {
-  width: 100%;
-  height: auto;             /* let image maintain proportions */
-  max-height: 520px;        /* same max height as Project 1 */
-  background-size: contain; /* prevent cropping */
+  width: 100%;             /* fill half-project container */
+  height: auto;            /* natural height based on image */
+  max-width: 100%;         /* don’t exceed container */
+  aspect-ratio: auto;      /* maintain natural proportions */
+  background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 2px;
@@ -330,5 +330,6 @@ body{
 @media (max-width: 768px) {
   .half-project {
     flex: 0 1 100%;         /* full width on mobile */
+    margin-bottom: 20px;    /* optional spacing between stacked projects */
   }
 }
