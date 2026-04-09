@@ -252,7 +252,7 @@ body{
 }
 /* Full-width homepage image styles */
 .feed-item.horizontal-full .image-placeholder {
-  width: 100%;
+  width: 80%;
   height: 100vh;
   max-height: 900px;
   background-size: cover;
