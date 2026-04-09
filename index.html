@@ -22,46 +22,32 @@
     </div>
   </header>
 
-  <main class="feed" role="main">
-  
-  </main>
+<main class="feed" role="main">
+</main>
 
-  <footer class="site-footer"></footer>
 <script>
 fetch('content/home-projects.json')
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
-    const feedElement = document.querySelector('.feed');
+    const feed = document.querySelector('.feed');
 
-    // Loop through sections in JSON
-    data.homePageLayout.forEach(section => {
+    data.homePageLayout[0].projects.forEach(project => {
+      const article = document.createElement('article');
+      article.className = 'feed-item horizontal-full';
 
-      // Loop through each project
-      section.projects.forEach(project => {
+      const imgDiv = document.createElement('div');
+      imgDiv.className = 'image-placeholder';
+      imgDiv.style.backgroundImage = `url('${project.imageUrl}')`;
+      imgDiv.setAttribute('aria-hidden', 'true');
 
-        // Build the article HTML
-        const articleHTML = `
-          <article class="feed-item horizontal-full">
+      const caption = document.createElement('div');
+      caption.className = 'caption';
+      caption.innerHTML = `<h2 class="caption-title"><em>${project.title}</em>, ${project.year}. ${project.medium}.</h2>`;
 
-            <!-- Main image -->
-            <div class="image-placeholder" style="background-image: url('${project.imageUrl}')" aria-hidden="true"></div>
-
-            <!-- Caption -->
-            <div class="caption">
-              <h2 class="caption-title"><em>${project.title}</em>, ${project.year}. ${project.medium}.</h2>
-            </div>
-            
-          </article>
-        `;
-
-        // Add the article to the page
-        feedElement.innerHTML += articleHTML;
-
-      });
-
+      article.appendChild(imgDiv);
+      article.appendChild(caption);
+      feed.appendChild(article);
     });
   })
-  .catch(err => {
-    console.error('Error loading home projects JSON:', err);
-  });
+  .catch(err => console.error(err));
 </script>
