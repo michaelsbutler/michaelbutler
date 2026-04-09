@@ -314,18 +314,35 @@ body{
   flex: 0 1 48%;    /* roughly half width */
 }
 
-/* adjust image size inside half-project */
+/* container for two projects side by side */
+.side-by-side {
+  display: flex;
+  gap: 20px;        /* space between projects */
+  justify-content: center;
+  flex-wrap: wrap;   /* allows stacking on small screens */
+}
+
+/* each half-width project */
+.half-project {
+  flex: 0 1 48%;     /* roughly half width on desktop */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* the images themselves */
 .half-project .image-placeholder {
-  height: 320px;    /* height for desktop */
+  width: 100%;       /* fill half-project width */
+  height: auto;      /* natural height */
+  aspect-ratio: 1;   /* maintain square ratio */
+  background-size: cover;   /* fill container without stretching */
+  background-position: center;
+  border-radius: 2px;
 }
 
 /* responsive: stack on mobile */
 @media (max-width: 768px) {
   .half-project {
     flex: 0 1 100%;   /* full width on mobile */
-  }
-
-  .half-project .image-placeholder {
-    height: 220px;    /* smaller height on mobile */
   }
 }
