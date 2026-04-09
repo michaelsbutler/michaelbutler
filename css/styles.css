@@ -252,10 +252,12 @@ body{
 }
 /* Full-width homepage image styles */
 .feed-item.horizontal-full .image-placeholder {
-  width: 100%;
+  width: 80%;              /* makes it smaller */
+  max-width: 900px;        /* prevents it from getting huge */
   height: 60vh;
-  max-height: 700px;
-  background-size: cover;
+  margin: 0 auto;          /* centers it */
+  background-size: contain; /* shows full image */
+  background-repeat: no-repeat;
   background-position: center;
 }
 
