@@ -301,3 +301,31 @@ body{
     width: 100%;
   }
 }
+/* container for two projects */
+.side-by-side {
+  display: flex;
+  gap: 20px;       /* space between images */
+  justify-content: center;
+  flex-wrap: wrap;  /* allow stacking on small screens */
+}
+
+/* each half-width project */
+.half-project {
+  flex: 0 1 48%;    /* roughly half width */
+}
+
+/* adjust image size inside half-project */
+.half-project .image-placeholder {
+  height: 320px;    /* height for desktop */
+}
+
+/* responsive: stack on mobile */
+@media (max-width: 768px) {
+  .half-project {
+    flex: 0 1 100%;   /* full width on mobile */
+  }
+
+  .half-project .image-placeholder {
+    height: 220px;    /* smaller height on mobile */
+  }
+}
