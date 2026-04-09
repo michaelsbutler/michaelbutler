@@ -302,39 +302,28 @@ body{
   }
 }
 /* ===== Projects 2 & 3 side by side ===== */
+/* ===== Projects 2 & 3 side by side ===== */
 .side-by-side {
   display: flex;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap;      /* stack on small screens */
   margin-top: 40px;
 }
 
 .half-project {
-  flex: 0 1 48%;
+  flex: 0 1 48%;        /* roughly half width on desktop */
   text-align: center;
 }
 
-.half-project {
+.half-project .half-image {
   width: 100%;
-  padding-top: 100%; /* keeps square aspect ratio */
-  background-size: cover;
-  background-position: center;
+  height: auto;         /* natural proportions */
   border-radius: 2px;
-  position: relative;
-}
-
-.half-project img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 @media (max-width: 768px) {
   .half-project {
-    flex: 0 1 100%;
-    padding-top: 100%;
+    flex: 0 1 100%;     /* full width on mobile */
   }
 }
