@@ -306,7 +306,7 @@ body{
   display: flex;
   gap: 20px;               /* space between projects */
   justify-content: center;
-  flex-wrap: wrap;          /* allows stacking on smaller screens */
+  flex-wrap: wrap;          /* stack on small screens */
   margin-top: 40px;
 }
 
@@ -316,13 +316,11 @@ body{
 }
 
 .half-project .image-placeholder {
-  width: 100%;             /* fill half-project container */
-  height: auto;            /* natural height based on image */
-  max-width: 100%;         /* don’t exceed container */
-  aspect-ratio: auto;      /* maintain natural proportions */
-  background-size: contain; 
+  width: 100%;             /* fill half-project width */
+  height: auto;            /* maintain original aspect ratio */
+  max-width: 400px;        /* optional: prevent them from being huge */
+  background-size: cover;  /* fill container nicely */
   background-position: center;
-  background-repeat: no-repeat;
   border-radius: 2px;
 }
 
@@ -330,6 +328,5 @@ body{
 @media (max-width: 768px) {
   .half-project {
     flex: 0 1 100%;         /* full width on mobile */
-    margin-bottom: 20px;    /* optional spacing between stacked projects */
   }
 }
