@@ -27,25 +27,31 @@
   </main>
 
   <footer class="site-footer"></footer>
- <script>
+<script>
 fetch('content/home-projects.json')
   .then(response => response.json())
   .then(data => {
     const feedElement = document.querySelector('.feed');
 
+    // Loop through sections in JSON
     data.homePageLayout.forEach(section => {
+
+      // Loop through each project
       section.projects.forEach(project => {
 
-        // Build the article
+        // Build the article HTML
         const articleHTML = `
           <article class="feed-item horizontal-full">
 
+            <!-- Main image -->
             <div class="image-placeholder" style="background-image: url('${project.imageUrl}')" aria-hidden="true"></div>
 
+            <!-- Caption -->
             <div class="caption">
               <h2 class="caption-title"><em>${project.title}</em>, ${project.year}. Linocut.</h2>
             </div>
 
+            <!-- Two images side by side -->
             <div class="pdf-row">
               <div class="pdf-item">
                 <img src="content/images/AudeEleanorCoverCov.jpg" class="pdf-image vertical">
@@ -65,9 +71,14 @@ fetch('content/home-projects.json')
           </article>
         `;
 
+        // Add the article to the page
         feedElement.innerHTML += articleHTML;
 
       });
+
     });
+  })
+  .catch(err => {
+    console.error('Error loading home projects JSON:', err);
   });
 </script>
