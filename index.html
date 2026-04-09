@@ -33,7 +33,7 @@ fetch('content/home-projects.json')
   .then(data => {
     const projects = data.homePageLayout[0].projects;
 
-    // PROJECT 1 (full width)
+    // Project 1 (full width)
     const project1 = projects[0];
     feed.innerHTML += `
       <article class="feed-item horizontal-full">
@@ -44,13 +44,13 @@ fetch('content/home-projects.json')
       </article>
     `;
 
-    // PROJECTS 2 & 3 (side by side)
+    // Projects 2 & 3 side by side
     feed.innerHTML += `
       <article class="feed-item horizontal-pair">
         <div class="side-by-side">
           ${projects.slice(1).map(p => `
             <div class="half-project">
-              <div class="image-placeholder" style="background-image: url('${p.imageUrl}')"></div>
+              <img src="${p.imageUrl}" alt="${p.title}" class="half-image"/>
               <div class="caption">
                 <h2 class="caption-title"><em>${p.title}</em>, ${p.year}. ${p.medium}.</h2>
               </div>
@@ -59,6 +59,5 @@ fetch('content/home-projects.json')
         </div>
       </article>
     `;
-  })
-  .catch(err => console.error('Error loading JSON:', err));
+  });
 </script>
