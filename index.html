@@ -45,19 +45,19 @@ fetch('content/home-projects.json')
     `;
 
     // Projects 2 & 3 side by side
-    feed.innerHTML += `
-      <article class="feed-item horizontal-pair">
-        <div class="side-by-side">
-          ${projects.slice(1).map(p => `
-            <div class="half-project">
-              <img src="${p.imageUrl}" alt="${p.title}" class="half-image"/>
-              <div class="caption">
-                <h2 class="caption-title"><em>${p.title}</em>, ${p.year}. ${p.medium}.</h2>
-              </div>
-            </div>
-          `).join('')}
+feed.innerHTML += `
+  <article class="feed-item horizontal-pair">
+    <div class="side-by-side">
+      ${projects.slice(1).map(p => `
+        <div class="half-project">
+          <img src="${p.imageUrl}" alt="${p.title}" class="half-image"/>
+          <div class="caption">
+            <h2 class="caption-title"><em>${p.title}</em>, ${p.year}. ${p.medium}.</h2>
+          </div>
         </div>
-      </article>
-    `;
+      `).join('')}
+    </div>
+  </article>
+`;
   });
 </script>
