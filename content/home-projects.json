@@ -7,7 +7,19 @@
           "title": "Musical Chairs",
           "year": 2026,
           "medium": "Linocut",
-          "imageUrl": "Content/images/IMG_6196.jpg"
+          "imageUrl": "content/images/IMG_6196.jpg"
+        },
+        {
+          "title": "Aude Eleanor (Vertical)",
+          "year": 2025,
+          "medium": "Print",
+          "imageUrl": "content/images/AudeEleanorCoverCov.jpg"
+        },
+        {
+          "title": "Aude Eleanor (Spread)",
+          "year": 2025,
+          "medium": "Print",
+          "imageUrl": "content/images/AudeEleanorBookletInt.jpg"
         }
       ]
     }
