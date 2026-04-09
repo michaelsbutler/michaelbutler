@@ -264,7 +264,8 @@ body{
 .feed-item.horizontal-full {
   margin-bottom: 0; /* Remove bottom margin for full-width image */
 }
-/* PDF row layout */
+/* ===== PDF IMAGE ROW ===== */
+
 .pdf-row {
   display: flex;
   justify-content: center;
@@ -273,33 +274,30 @@ body{
   align-items: flex-start;
 }
 
-/* each PDF block */
 .pdf-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* PDF styling */
-.pdf-embed {
-  border: none;
-  background: #f5f5f5;
+.pdf-image {
+  display: block;
 }
 
-/* vertical PDF */
-.pdf-embed.vertical {
+/* vertical image */
+.pdf-image.vertical {
   width: 300px;
-  height: 420px;
+  height: auto;
 }
 
-/* horizontal PDF */
-.pdf-embed.horizontal {
+/* horizontal image */
+.pdf-image.horizontal {
   width: 600px;
-  height: 420px;
+  height: auto;
 }
 
-/* captions under PDFs */
+/* captions under images */
 .pdf-item .caption {
-  width: auto;
   margin-top: 12px;
+  width: auto;
 }
