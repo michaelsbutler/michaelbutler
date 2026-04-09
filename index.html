@@ -49,5 +49,27 @@
   </main>
 
   <footer class="site-footer"></footer>
+   <script>
+  fetch('content/home-projects.json')
+    .then(response => response.json())
+    .then(data => {
+      const feedElement = document.querySelector('.feed');
+      data.homePageLayout.forEach(section => {
+        section.projects.forEach(project => {
+          const articleHTML = `
+            <article class="feed-item horizontal-full">
+              <div class="image-placeholder" style="background-image: url('${project.imageUrl}')" aria-hidden="true"></div>
+              <div class="caption">
+                <h2 class="caption-title"><em>${project.title}</em>, ${project.year}</h2>
+                <p class="caption-action"><a href="about.html" class="caption-link">Inquire</a></p>
+              </div>
+            </article>
+          `;
+          feedElement.innerHTML += articleHTML;
+        });
+      });
+    });
+</script>
+
 </body>
 </html>
