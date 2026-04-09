@@ -8,7 +8,12 @@
           "year": 2026,
           "medium": "Linocut",
           "imageUrl": "content/images/IMG_6196.jpg"
-        },
+        }
+      ]
+    },
+    {
+      "type": "side-by-side",
+      "projects": [
         {
           "title": "Aude Eleanor (Vertical)",
           "year": 2025,
